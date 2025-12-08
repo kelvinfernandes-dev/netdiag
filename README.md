@@ -4,6 +4,8 @@
 
 Seu principal objetivo é ser um binário leve e portátil, ideal para *troubleshooting* em ambientes de Backend e Infraestrutura.
 
+Criei esse projeto voltado a uma necessidade em alguns serviços freelancers em ambientes de muito controle, fico feliz se isso ajudar mais alguém.
+
 ##  Destaques do Projeto
 
 * **Binário Nativo:** Compila para um único arquivo executável estático, garantindo *performance* e zero dependências.
@@ -49,3 +51,24 @@ Para gerar o binário para um sistema específico (Cross-Compilação):
 
 # Exemplo para Windows a partir do Linux/macOS
 GOOS=windows GOARCH=amd64 go build -o netdiag.exe main.go
+
+# Exemplo para Linux 64-bit a partir do Windows/macOS
+GOOS=linux GOARCH=amd64 go build -o netdiag_linux main.go
+
+# Exemplo para macOS (Darwin) a partir do Windows/Linux
+GOOS=darwin GOARCH=amd64 go build -o netdiag_macos main.go
+
+Contribuições são bem-vindas! Se você tiver sugestões, bug reports ou quiser implementar novas funcionalidades (como um teste de latência ICMP puro ou concorrência real para o speed test), siga estas etapas:
+
+Faça um Fork do repositório.
+
+Crie uma branch para sua funcionalidade (git checkout -b feature/minha-feature).
+
+Faça suas alterações e commit (git commit -m 'feat: Adiciona nova funcionalidade X').
+
+Faça o push para a branch (git push origin feature/minha-feature).
+
+Abra um Pull Request.
+
+
+Bom, é isso e aos jovens que aqui chegaram deixarei Athena aos seus cuidados...
