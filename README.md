@@ -23,6 +23,7 @@ Execute o binário sem argumentos ou use a flag `-i`:
 ./netdiag
 # OU
 ./netdiag -i
+````
 
 ## Como Usar
 
