@@ -38,7 +38,7 @@ Se você tem o Go instalado (versão 1.18+), pode compilar o projeto facilmente:
 
 Clone o repositório:
 
-git clone [SEU_REPOSITORIO_AQUI]
+git clone https://github.com/kelvinfernandes-dev/netdiag
 cd netdiag
 
 Compile o binário para o seu sistema:
