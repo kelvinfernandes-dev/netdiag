@@ -24,17 +24,22 @@ Execute o binário sem argumentos ou use a flag `-i`:
 # OU
 ./netdiag -i
 
-Comando,Descrição,Exemplo
--all,Executa todos os testes básicos.,./netdiag -all
--ip,Exibe IPs público e local.,./netdiag -ip
--interfaces,Lista interfaces de rede ativas.,./netdiag -interfaces
--ping <host>,Pinga um host (padrão 4 vezes).,./netdiag -ping google.com
--speed,Testa velocidade de download e upload.,./netdiag -speed
--port <host:porta>,Testa a conexão com uma porta.,./netdiag -port localhost:8080
--json,Força a saída em formato JSON.,./netdiag -all -json > results.json
--trace <host>,Executa traceroute.,./netdiag -trace google.com
+## Como Usar
 
-🛠️ Compilação (Build)
+### 2. Modo Linha de Comando (CLI)
+
+| Comando | Descrição | Exemplo |
+| :--- | :--- | :--- |
+| `-all` | Executa todos os testes básicos. | `./netdiag -all` |
+| `-ip` | Exibe IPs público e local. | `./netdiag -ip` |
+| `-interfaces` | Lista interfaces de rede ativas. | `./netdiag -interfaces` |
+| `-ping <host>` | Pinga um host (padrão 4 vezes). | `./netdiag -ping google.com` |
+| `-speed` | Testa velocidade de download e upload. | `./netdiag -speed` |
+| `-port <host:porta>` | Testa a conexão com uma porta. | `./netdiag -port localhost:8080` |
+| `-json` | Força a saída em formato JSON. | `./netdiag -all -json > results.json` |
+| `-trace <host>` | Executa traceroute. | `./netdiag -trace google.com` |
+
+### 3. Compilação (opcional)
 
 Se você tem o Go instalado (versão 1.18+), pode compilar o projeto facilmente:
 
