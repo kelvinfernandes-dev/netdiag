@@ -76,4 +76,4 @@ O NetDiag foi desenvolvido para resolver esse cenário de forma direta, com foco
 
 ## Contribuição
 
-Contribuições são bem-vindas via Pull Reque
+Contribuições são bem-vindas via Pull Request.
