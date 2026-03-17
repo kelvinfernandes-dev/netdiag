@@ -1,7 +1,5 @@
 # NetDiag (Network Diagnostic Tool)
 
-# NetDiag (Network Diagnostic Tool)
-
 NetDiag é uma ferramenta de linha de comando (CLI) para diagnóstico de rede, desenvolvida em Go, focada em ambientes com restrições de instalação e alto controle de permissões.
 
 O projeto foi criado a partir de uma necessidade real em atividades de suporte técnico e troubleshooting, onde ferramentas tradicionais não podiam ser instaladas ou dependiam de runtimes externos.
