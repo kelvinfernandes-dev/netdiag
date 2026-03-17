@@ -33,42 +33,47 @@ A proposta é fornecer um executável único, leve e portátil, capaz de realiza
 ./netdiag
 # ou
 ./netdiag -i
+```
 
-
-
-### Modo Linha de Comando (CLI)
+### Modo CLI
 
 | Comando | Descrição | Exemplo |
-| :--- | :--- | :--- |
-| `-all` | Executa todos os testes básicos. | `./netdiag -all` |
-| `-ip` | Exibe IPs público e local. | `./netdiag -ip` |
-| `-interfaces` | Lista interfaces de rede ativas. | `./netdiag -interfaces` |
-| `-ping <host>` | Pinga um host (padrão 4 vezes). | `./netdiag -ping google.com` |
-| `-speed` | Testa velocidade de download e upload. | `./netdiag -speed` |
-| `-port <host:porta>` | Testa a conexão com uma porta. | `./netdiag -port localhost:8080` |
-| `-json` | Força a saída em formato JSON. | `./netdiag -all -json > results.json` |
-| `-trace <host>` | Executa traceroute. | `./netdiag -trace google.com` |
+|--------|----------|---------|
+| -all | Executa todos os testes básicos | ./netdiag -all |
+| -ip | Exibe IP público e local | ./netdiag -ip |
+| -interfaces | Lista interfaces de rede | ./netdiag -interfaces |
+| -ping <host> | Testa conectividade com um host | ./netdiag -ping google.com |
+| -speed | Testa velocidade de rede | ./netdiag -speed |
+| -port <host:porta> | Testa conexão com porta específica | ./netdiag -port localhost:8080 |
+| -trace <host> | Executa traceroute | ./netdiag -trace google.com |
+| -json | Saída estruturada em JSON | ./netdiag -all -json > resultado.json |
 
-### Compilação (opcional)
+## Compilação
 
 Requisitos: Go 1.18+
 
+```bash
 git clone https://github.com/kelvinfernandes-dev/netdiag
 cd netdiag
 go build -o netdiag main.go
+```
 
 ### Cross-compilation
 
+```bash
 GOOS=windows GOARCH=amd64 go build -o netdiag.exe main.go
 GOOS=linux GOARCH=amd64 go build -o netdiag_linux main.go
 GOOS=darwin GOARCH=amd64 go build -o netdiag_macos main.go
+```
 
-### Motivação
+## Motivação
 
 Durante atividades de suporte e freelancing, foi recorrente a necessidade de realizar diagnósticos de rede em ambientes com forte restrição de permissões.
+
 Ferramentas existentes muitas vezes exigiam instalação, dependências adicionais ou não ofereciam saída estruturada para automação.
+
 O NetDiag foi desenvolvido para resolver esse cenário de forma direta, com foco em portabilidade, simplicidade e eficiência.
 
-### Contribuição
+## Contribuição
 
-Contribuições são bem-vindas via Pull Request.
+Contribuições são bem-vindas via Pull Reque
