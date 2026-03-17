@@ -1,33 +1,44 @@
 # NetDiag (Network Diagnostic Tool)
 
-**NetDiag** é uma ferramenta de linha de comando (CLI) de diagnóstico de rede rápida e moderna, desenvolvida em **Go (Golang)**. Inspirada no antigo utilitário `NetDiag` da Microsoft, ela foi criada para fornecer informações detalhadas e executar testes de conectividade de forma eficiente, sem depender de *runtimes* ou bibliotecas externas complexas.
+# NetDiag (Network Diagnostic Tool)
 
-Seu principal objetivo é ser um binário leve e portátil, ideal para *troubleshooting* em ambientes de Backend e Infraestrutura.
+NetDiag é uma ferramenta de linha de comando (CLI) para diagnóstico de rede, desenvolvida em Go, focada em ambientes com restrições de instalação e alto controle de permissões.
 
-Criei esse projeto voltado a uma necessidade em alguns serviços freelancers em ambientes de muito controle, fico feliz se isso ajudar mais alguém.
+O projeto foi criado a partir de uma necessidade real em atividades de suporte técnico e troubleshooting, onde ferramentas tradicionais não podiam ser instaladas ou dependiam de runtimes externos.
 
-##  Destaques do Projeto
+A proposta é fornecer um executável único, leve e portátil, capaz de realizar testes essenciais de conectividade e gerar saídas estruturadas para automação.
 
-* **Binário Nativo:** Compila para um único arquivo executável estático, garantindo *performance* e zero dependências.
-* **Modo Duplo:** Suporta **Modo Interativo** (com menu colorido) e **Modo CLI** (para *scripting* e CI/CD).
-* **Saída JSON:** Permite que a saída do diagnóstico seja consumida por outras ferramentas de automação.
-* **Testes Essenciais:** Ping, Latência, Resolução DNS, Velocidade de Download/Upload, Checagem de Portas e Traceroute.
+## Principais Características
 
-##  Como Usar
+- Binário estático (sem dependências externas)
+- Execução em ambientes restritos
+- Modo interativo para uso manual
+- Modo CLI para automação e scripting
+- Saída em JSON para integração com outros sistemas
 
-### 1. Modo Interativo (Menu)
+## Funcionalidades
 
-Execute o binário sem argumentos ou use a flag `-i`:
-
-```bash
-./netdiag
-# OU
-./netdiag -i
-````
+- Verificação de conectividade (Ping)
+- Medição de latência
+- Resolução de DNS
+- Teste de velocidade (download/upload)
+- Verificação de portas
+- Traceroute
+- Listagem de interfaces de rede
+- Identificação de IP público e local
 
 ## Como Usar
 
-### 2. Modo Linha de Comando (CLI)
+### Modo Interativo
+
+```bash
+./netdiag
+# ou
+./netdiag -i
+
+
+
+### Modo Linha de Comando (CLI)
 
 | Comando | Descrição | Exemplo |
 | :--- | :--- | :--- |
@@ -40,41 +51,26 @@ Execute o binário sem argumentos ou use a flag `-i`:
 | `-json` | Força a saída em formato JSON. | `./netdiag -all -json > results.json` |
 | `-trace <host>` | Executa traceroute. | `./netdiag -trace google.com` |
 
-### 3. Compilação (opcional)
+### Compilação (opcional)
 
-Se você tem o Go instalado (versão 1.18+), pode compilar o projeto facilmente:
-
-Clone o repositório:
+Requisitos: Go 1.18+
 
 git clone https://github.com/kelvinfernandes-dev/netdiag
 cd netdiag
-
-Compile o binário para o seu sistema:
-
 go build -o netdiag main.go
 
-Para gerar o binário para um sistema específico (Cross-Compilação):
+### Cross-compilation
 
-# Exemplo para Windows a partir do Linux/macOS
 GOOS=windows GOARCH=amd64 go build -o netdiag.exe main.go
-
-# Exemplo para Linux 64-bit a partir do Windows/macOS
 GOOS=linux GOARCH=amd64 go build -o netdiag_linux main.go
-
-# Exemplo para macOS (Darwin) a partir do Windows/Linux
 GOOS=darwin GOARCH=amd64 go build -o netdiag_macos main.go
 
-Contribuições são bem-vindas! Se você tiver sugestões, bug reports ou quiser implementar novas funcionalidades (como um teste de latência ICMP puro ou concorrência real para o speed test), siga estas etapas:
+### Motivação
 
-Faça um Fork do repositório.
+Durante atividades de suporte e freelancing, foi recorrente a necessidade de realizar diagnósticos de rede em ambientes com forte restrição de permissões.
+Ferramentas existentes muitas vezes exigiam instalação, dependências adicionais ou não ofereciam saída estruturada para automação.
+O NetDiag foi desenvolvido para resolver esse cenário de forma direta, com foco em portabilidade, simplicidade e eficiência.
 
-Crie uma branch para sua funcionalidade (git checkout -b feature/minha-feature).
+### Contribuição
 
-Faça suas alterações e commit (git commit -m 'feat: Adiciona nova funcionalidade X').
-
-Faça o push para a branch (git push origin feature/minha-feature).
-
-Abra um Pull Request.
-
-
-Bom, é isso e aos jovens que aqui chegaram deixarei Athena aos seus cuidados...
+Contribuições são bem-vindas via Pull Request.
